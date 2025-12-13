@@ -1,0 +1,83 @@
+cyt/
+├── info.md                  # Short usage advice
+│   
+├── cyt/                     # CYT compiler package
+│   ├── __init__.py
+│   ├── cli.py               # entry point, argument parsing, orchestration
+│   ├── config.py            # global configuration
+│   ├── errors.py            # custom exception types
+│   │
+│   ├── util/                # generic helpers (no compiler logic)
+│   │   ├── __init__.py
+│   │   ├── debug.py
+│   │   ├── logging.py
+│   │   ├── graph.py
+│   │   └── diagnostics.py
+│   │
+│   ├── frontend/            # Python-facing code
+│   │   ├── __init__.py
+│   │   ├── lexer.py
+│   │   ├── parser.py
+│   │   ├── ast.py           # AST node definitions
+│   │   ├── visitor.py
+│   │   └── desugar.py
+│   │
+│   ├── ir/                  # Intermediate Representation
+│   │   ├── __init__.py
+│   │   ├── nodes.py         # IR node definitions
+│   │   ├── types.py         # IR type system
+│   │   ├── symbols.py       # scopes and symbol tables
+│   │   └── builder.py       # AST → IR lowering
+│   │
+│   ├── passes/              # analysis & transformation passes
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── name_resolution.py
+│   │   ├── type_checking.py
+│   │   ├── control_flow.py
+│   │   ├── lifetime_analysis.py
+│   │   └── optimization/
+│   │       ├── constant_folding.py
+│   │       ├── dead_code.py
+│   │       └── inlining.py
+│   │
+│   ├── backend/
+│   │   ├── __init__.py
+│   │   └── c/               # C backend
+│   │       ├── __init__.py
+│   │       ├── emitter.py
+│   │       ├── headers.py
+│   │       ├── runtime_glue.py
+│   │       └── formatting.py
+│   │
+│   └── runtime/             # C runtime shipped with output
+│       ├── cyt_runtime.h
+│       ├── cyt_runtime.c
+│       └── memory.c
+│
+├── readme/                  # project documentation (human-facing)
+│   ├── README.md            # high-level overview
+│   ├── pyproject.toml       # packaging / tooling reference
+│   └── structure.txt        # annotated project tree
+│
+├── docs/                    # deeper technical documentation
+│   ├── architecture.md
+│   └── ir.md
+│
+├── examples/                # input programs for testing CYT
+│   └── hello.py
+│
+├── cyt_out/                 # generated output (gitignored)
+│   └── hello/
+│       ├── ast.txt
+│       ├── ir.txt
+│       ├── hello.c
+│       ├── build.log
+│       └── runtime/
+│
+└── tests/                   # automated tests
+    ├── frontend/
+    ├── ir/
+    ├── passes/
+    ├── backend/
+    └── integration/
