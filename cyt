@@ -1,4 +1,6 @@
-from cyt_prog/cli.py import main
+#!/usr/bin/env python3
+
+from cyt_prog.cli import main
 
 if __name__ == "__main__":
     main()

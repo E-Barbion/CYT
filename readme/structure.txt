@@ -1,11 +1,19 @@
 cyt/
+├── .gitignore               # Contains gitignore files/directories
+│
 ├── info.md                  # Short usage advice
-│   
+│
+├── cyt                      # main executable. DO NOT TOUCH!
+│
+├── TODO.md                  # project-wide TODO   
+│
 ├── cyt_prog/                # CYT compiler package
 │   ├── __init__.py
 │   ├── cli.py               # entry point, argument parsing, orchestration
 │   ├── config.py            # global configuration
 │   ├── errors.py            # custom exception types
+│   │
+│   ├── __pycache__/         # compiler files
 │   │
 │   ├── util/                # generic helpers (no compiler logic)
 │   │   ├── __init__.py
@@ -68,7 +76,7 @@ cyt/
 │   └── hello.py
 │
 ├── cyt_out/                 # generated output (gitignored)
-│   └── hello/
+│   └── hello/               # example output directory
 │       ├── ast.txt
 │       ├── ir.txt
 │       ├── hello.c
