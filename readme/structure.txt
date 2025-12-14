@@ -1,7 +1,7 @@
 cyt/
 ├── info.md                  # Short usage advice
 │   
-├── cyt/                     # CYT compiler package
+├── cyt_prog/                # CYT compiler package
 │   ├── __init__.py
 │   ├── cli.py               # entry point, argument parsing, orchestration
 │   ├── config.py            # global configuration
