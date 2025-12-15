@@ -1,6 +1,8 @@
 import sys
 import shutil
 from pathlib import Path
+from cyt_prog.frontend.parser import parse
+from cyt_prog.io import write_to_output
 
 def main():
     if len(sys.argv) > 1:
@@ -43,3 +45,8 @@ def main():
     print("debug1 : created files / directories...")
     for entry in out_dir.iterdir():
         print(entry)
+    
+
+    SOURCE = Path(SOURCE_PATH).read_text(encoding="utf-8")
+    SOURCE_TEXT = parse(SOURCE)
+    write_to_output(OUTPUT_PATH + "/ast.txt", SOURCE_TEXT)
