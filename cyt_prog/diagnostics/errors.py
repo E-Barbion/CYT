@@ -24,6 +24,9 @@ class MissingInputFileError(CYTUserError):
     """No input file was provided to the CLI."""
     pass
 
+class IllegalCharError(CYTUserError):
+    """Found illegal char while lexing source."""
+    pass
 
 # Internal Errors
 

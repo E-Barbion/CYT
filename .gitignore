@@ -1,3 +1,8 @@
 /cyt_out/
 /cyt_prog/__pycache__/
-cyt_prog/frontend/__pycache__
+/cyt_prog/frontend/__pycache__/
+/cyt_prog/diagnostics/__pycache__/
+/cyt_prog/ir/__pycache__/
+/cyt_prog/passes/__pycache__/
+/cyt_prog/runtime/__pycache__/
+/cyt_prog/util/__pycache__/

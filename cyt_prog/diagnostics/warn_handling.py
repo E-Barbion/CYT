@@ -9,7 +9,9 @@ class DiagnosticContext:
         self.warnings.append(warning)
 
 
-def format_warning(w: CYTWarning) -> str:
-    if isinstance(w, MissingOutputFileWarning):
-        return f"Warning: No output directory given. Output will be at {OUTPUT_PATH}"
-    return "Warning"
+    def format_warning(w: CYTWarning) -> str:
+        if isinstance(w, MissingOutputFileWarning):
+            return f"Warning: No output directory given. Output will be at {OUTPUT_PATH}"
+        if isinstance(w, IllegalCharWarning):
+            return f"Warning:"
+        return "Warning"
