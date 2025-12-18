@@ -3,8 +3,9 @@ import shutil
 from pathlib import Path
 import cyt_prog.frontend.parser as parser
 import cyt_prog.io as io
+from .diagnostics import *
 
-def main():
+def run_cli(ctx):
     if len(sys.argv) > 1:
         dirs1 = sys.argv[1].split("/")
         SOURCE_NAME = dirs1[len(dirs1)-1].strip(".py")
@@ -16,8 +17,8 @@ def main():
         else:
             OUTPUT_NAME = "default"
             OUTPUT_PATH = "cyt_out/default/"
-            print("Note : No output directory given. Output will be at " + OUTPUT_PATH)
-    else: sys.exit(print("Error: no file given! exiting..."))
+            ctx.warn(MissingOutputFileWarning)
+    else: raise MissingInputFileError("No input file provided!")
     print("debug1 : results of I/O parsing...")
     print("SOURCE_NAME: " + SOURCE_NAME)
     print("SOURCE_PATH: " + SOURCE_PATH)

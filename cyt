@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from cyt_prog.cli import main
+import sys
+from cyt_prog.error_handling import main
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

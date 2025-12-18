@@ -1,5 +1,6 @@
 # ./cyt
-This is the executable that launches CYT. Do not touch.
+<!-- This is the executable that launches CYT. Do not touch. -->
+Update: Launches cyt, but main execution via "./cyt_prog/error_handling.py" as top-level entry-point.
 
 # ./.gitignore
 This file contains directories ignored by git.

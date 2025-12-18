@@ -11,7 +11,11 @@ cyt/
 │   ├── __init__.py
 │   ├── cli.py               # entry point, argument parsing, orchestration
 │   ├── config.py            # global configuration
-│   ├── errors.py            # custom exception types
+│   │
+│   ├── diagnostics/         # custom exception types
+│   │   ├── __init__.py
+│   │   ├── errors.py
+│   │   └── warnings.py
 │   │
 │   ├── __pycache__/         # compiler files
 │   │
